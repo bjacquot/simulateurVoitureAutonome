@@ -1,0 +1,129 @@
+#include "mainwindow.h"
+#include "ui_mainwindow.h"
+
+MainWindow::MainWindow(int nbVoitures, QWidget *parent)
+    : QMainWindow(parent)
+    , ui(new Ui::MainWindow)
+    , circuit(nbVoitures,this)
+{
+    ui->setupUi(this);
+    ui->circuitPosition->layout()->addWidget(&circuit);
+
+    ui->bpResetVoiture1->setStyleSheet("background-color:cyan;");
+    ui->bpResetVoiture2->setStyleSheet("background-color:darkRed;");
+    ui->bpResetVoiture3->setStyleSheet("background-color:blue;");
+    ui->bpResetVoiture4->setStyleSheet("background-color:magenta;");
+    ui->bpResetVoiture5->setStyleSheet("background-color:green;");
+    ui->bpResetVoiture6->setStyleSheet("background-color:gray;");
+
+
+    ui->checkBox_1->setStyleSheet("background-color:cyan;");
+    ui->checkBox_2->setStyleSheet("background-color:darkRed;");
+    ui->checkBox_3->setStyleSheet("background-color:blue;");
+    ui->checkBox_4->setStyleSheet("background-color:magenta;");
+    ui->checkBox_5->setStyleSheet("background-color:green;");
+    ui->checkBox_6->setStyleSheet("background-color:gray;");
+
+    ui->checkBox_1->setChecked(true);
+    ui->checkBox_2->setChecked(true);
+    ui->checkBox_3->setChecked(true);
+    ui->checkBox_4->setChecked(true);
+    ui->checkBox_5->setChecked(true);
+    ui->checkBox_6->setChecked(true);
+
+    ui->checkBox_all->setChecked(true);
+
+    connect(ui->checkBox_1,&QCheckBox::clicked,
+            circuit.voiture1.voiture,&Vehicule::setIsCollisions);
+    connect(ui->checkBox_2,&QCheckBox::clicked,
+            circuit.voiture2.voiture,&Vehicule::setIsCollisions);
+    connect(ui->checkBox_3,&QCheckBox::clicked,
+            circuit.voiture3.voiture,&Vehicule::setIsCollisions);
+    connect(ui->checkBox_4,&QCheckBox::clicked,
+            circuit.voiture4.voiture,&Vehicule::setIsCollisions);
+    connect(ui->checkBox_5,&QCheckBox::clicked,
+            circuit.voiture5.voiture,&Vehicule::setIsCollisions);
+    connect(ui->checkBox_6,&QCheckBox::clicked,
+            circuit.voiture6.voiture,&Vehicule::setIsCollisions);
+
+    connect(ui->checkBox_all,&QCheckBox::clicked,
+            circuit.voiture1.voiture,&Vehicule::setIsCollisions);
+    connect(ui->checkBox_all,&QCheckBox::clicked,
+            circuit.voiture2.voiture,&Vehicule::setIsCollisions);
+    connect(ui->checkBox_all,&QCheckBox::clicked,
+            circuit.voiture3.voiture,&Vehicule::setIsCollisions);
+    connect(ui->checkBox_all,&QCheckBox::clicked,
+            circuit.voiture4.voiture,&Vehicule::setIsCollisions);
+    connect(ui->checkBox_all,&QCheckBox::clicked,
+            circuit.voiture5.voiture,&Vehicule::setIsCollisions);
+    connect(ui->checkBox_all,&QCheckBox::clicked,
+            circuit.voiture6.voiture,&Vehicule::setIsCollisions);
+
+
+    connect(ui->checkBox_all,&QCheckBox::clicked,
+            ui->checkBox_1,&QCheckBox::setChecked);
+    connect(ui->checkBox_all,&QCheckBox::clicked,
+            ui->checkBox_2,&QCheckBox::setChecked);
+    connect(ui->checkBox_all,&QCheckBox::clicked,
+            ui->checkBox_3,&QCheckBox::setChecked);
+    connect(ui->checkBox_all,&QCheckBox::clicked,
+            ui->checkBox_4,&QCheckBox::setChecked);
+    connect(ui->checkBox_all,&QCheckBox::clicked,
+            ui->checkBox_5,&QCheckBox::setChecked);
+    connect(ui->checkBox_all,&QCheckBox::clicked,
+            ui->checkBox_6,&QCheckBox::setChecked);
+
+
+    /*QPushButton * bp;
+    for (int i=0;i<nbVoitures;i++)
+    {
+        bp = new QPushButton();
+        ui->barreHaut->layout()->addWidget(bp);
+        bp->setText("init V"+QString::number(i));
+    }*/
+
+
+    connect(ui->bpResetVoiture1,&QPushButton::clicked,
+            circuit.voiture1.voiture,&Vehicule::initPos);
+    connect(ui->bpResetVoiture2,&QPushButton::clicked,
+            circuit.voiture2.voiture,&Vehicule::initPos);
+    connect(ui->bpResetVoiture3,&QPushButton::clicked,
+            circuit.voiture3.voiture,&Vehicule::initPos);
+    connect(ui->bpResetVoiture4,&QPushButton::clicked,
+            circuit.voiture4.voiture,&Vehicule::initPos);
+    connect(ui->bpResetVoiture5,&QPushButton::clicked,
+            circuit.voiture5.voiture,&Vehicule::initPos);
+    connect(ui->bpResetVoiture6,&QPushButton::clicked,
+            circuit.voiture6.voiture,&Vehicule::initPos);
+
+    connect(ui->bpResetVoitureAll,&QPushButton::clicked,
+            circuit.voiture1.voiture,&Vehicule::initPos);
+    connect(ui->bpResetVoitureAll,&QPushButton::clicked,
+            circuit.voiture2.voiture,&Vehicule::initPos);
+    connect(ui->bpResetVoitureAll,&QPushButton::clicked,
+            circuit.voiture3.voiture,&Vehicule::initPos);
+    connect(ui->bpResetVoitureAll,&QPushButton::clicked,
+            circuit.voiture4.voiture,&Vehicule::initPos);
+    connect(ui->bpResetVoitureAll,&QPushButton::clicked,
+            circuit.voiture5.voiture,&Vehicule::initPos);
+    connect(ui->bpResetVoitureAll,&QPushButton::clicked,
+            circuit.voiture6.voiture,&Vehicule::initPos);
+
+    // bps choix circuit
+
+    connect(ui->bpCircuit_1,&QPushButton::clicked,
+            &circuit,&CircuitWidget::loadCircuit1);
+    connect(ui->bpCircuit_2,&QPushButton::clicked,
+            &circuit,&CircuitWidget::loadCircuit2);
+    connect(ui->bpCircuit_3,&QPushButton::clicked,
+            &circuit,&CircuitWidget::loadCircuit3);
+    connect(ui->bpCircuit_4,&QPushButton::clicked,
+            &circuit,&CircuitWidget::loadCircuit4);
+
+    resize(1000,900);
+}
+
+MainWindow::~MainWindow()
+{
+    delete ui;
+}
