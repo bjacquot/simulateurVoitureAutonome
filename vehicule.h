@@ -32,6 +32,8 @@ public:
 
     int getNbTour() const;
 
+    bool getPenalite() const;
+
 public slots:
     void setIsCollisions(bool newIsCollisions);
     void start();
@@ -51,6 +53,8 @@ private:
     int nbTour=0;
 
     bool isRunning=false;
+    bool penalite=false;
+
     Circuit &circuit;
 
     std::chrono::time_point<std::chrono::high_resolution_clock> timeStartTour,timeStart;

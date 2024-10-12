@@ -109,6 +109,7 @@ void Vehicule::initPos()
     timeStartTour=time;
     timeStart=time;
     nbTour=0;
+    penalite=false;
 }
 
 
@@ -120,6 +121,11 @@ QVector<QLineF> Vehicule::getLinesLidar() const
 double Vehicule::orientationRadian()
 {
     return qDegreesToRadians(orientation);
+}
+
+bool Vehicule::getPenalite() const
+{
+    return penalite;
 }
 
 int Vehicule::getNbTour() const
@@ -150,6 +156,7 @@ void Vehicule::setIsCollisions(bool newIsCollisions)
 void Vehicule::start()
 {
     isRunning=true;
+    if (vitesse_mm_s!=0) penalite=true;
 }
 
 void Vehicule::stop()

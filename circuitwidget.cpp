@@ -365,6 +365,13 @@ void CircuitWidget::drawVehicule(Vehicule *vehicule, const QColor &color, QPaint
     painter.setPen(pen);
     if ((showLidar==true)and(vehicule->getIsConnected()))   painter.drawLines(vehicule->getLinesLidar());
     else                                                    painter.drawEllipse(vehicule->getPosition(),70,70);
+    if (vehicule->getPenalite()==true)
+    {
+        pen.setColor(Qt::red);
+        painter.setPen(pen);
+        painter.setBrush(Qt::red);
+        painter.drawEllipse(vehicule->getPosition(),30,30);
+    }
 }
 
 void CircuitWidget::maj()
