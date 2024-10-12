@@ -6,12 +6,12 @@
 CircuitWidget::CircuitWidget(int _nbVoitures, QWidget *parent)
     : QWidget{parent}
     , nbVoitures(_nbVoitures)
-    , voiture1(0,-2500,8888,circuit)
-    , voiture2(-500,-2200,8889, circuit)
-    , voiture3(-500,-2800,8890, circuit)
-    , voiture4(-1000,-2200,8891, circuit)
-    , voiture5(-3000,-2800,8892, circuit)
-    , voiture6(-2500,-2800,8893, circuit)
+    , voiture1(0,-2500,8880,circuit)
+    , voiture2(-500,-2200,8881, circuit)
+    , voiture3(-500,-2800,8882, circuit)
+    , voiture4(-1000,-2200,8883, circuit)
+    , voiture5(-3000,-2800,8884, circuit)
+    , voiture6(-2500,-2800,8885, circuit)
 {
 
     voiture1.mutex.lock();
@@ -56,9 +56,8 @@ void CircuitWidget::paintEvent(QPaintEvent *event)
     QPen pen;
     const int xCenter=width()/2;
     const int yCenter=height()/2;
-    const qreal zoom=0.1;
 
-    painter.translate(QPoint(xCenter,yCenter));
+    painter.translate(QPoint(xCenter,yCenter)+centre);
     painter.scale(zoom,zoom);
 
     pen.setWidth(5/zoom);
@@ -195,6 +194,36 @@ void CircuitWidget::loadCircuit4()
     coteGauche.clear();
 
     createCircuit();
+}
+
+void CircuitWidget::zoomPlus()
+{
+    zoom+=0.005;
+}
+
+void CircuitWidget::zoomMoins()
+{
+    if (zoom>0) zoom-=0.005;
+}
+
+void CircuitWidget::moveHaut()
+{
+    centre+=QPoint(0,-10);
+}
+
+void CircuitWidget::moveBas()
+{
+    centre+=QPoint(0,10);
+}
+
+void CircuitWidget::moveDroit()
+{
+    centre+=QPoint(10,0);
+}
+
+void CircuitWidget::moveGauche()
+{
+    centre+=QPoint(-10,0);
 }
 
 void CircuitWidget::createCircuit()

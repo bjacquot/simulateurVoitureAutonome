@@ -120,6 +120,20 @@ MainWindow::MainWindow(int nbVoitures, QWidget *parent)
     connect(ui->bpCircuit_4,&QPushButton::clicked,
             &circuit,&CircuitWidget::loadCircuit4);
 
+    connect(ui->bpZoomPlus,&QPushButton::clicked,
+            &circuit,&CircuitWidget::zoomPlus);
+    connect(ui->bpZoomMoins,&QPushButton::clicked,
+            &circuit,&CircuitWidget::zoomMoins);
+
+    connect(ui->bpMoveUp,&QPushButton::clicked,
+            &circuit,&CircuitWidget::moveHaut);
+    connect(ui->bpMoveDown,&QPushButton::clicked,
+            &circuit,&CircuitWidget::moveBas);
+    connect(ui->bpMoveDroit,&QPushButton::clicked,
+            &circuit,&CircuitWidget::moveDroit);
+    connect(ui->bpMoveGauche,&QPushButton::clicked,
+            &circuit,&CircuitWidget::moveGauche);
+
     resize(1000,900);
 }
 

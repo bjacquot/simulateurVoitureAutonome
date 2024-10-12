@@ -19,6 +19,8 @@ public:
     Circuit circuit;
 
     const int nbVoitures;
+    double zoom=0.1;
+    QPoint centre;
     //QVector<VehiculeThread> voituresThreads;
     VehiculeThread voiture1;
     VehiculeThread voiture2;
@@ -49,6 +51,13 @@ public slots:
     void loadCircuit2();
     void loadCircuit3();
     void loadCircuit4();
+    void zoomPlus();
+    void zoomMoins();
+
+    void moveHaut();
+    void moveBas();
+    void moveDroit();
+    void moveGauche();
 
 signals:
 };
