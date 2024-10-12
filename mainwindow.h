@@ -26,6 +26,9 @@ private:
 private slots:
     void newTimeVoiture(int voiture,int time);
     void newBestTimeVoiture(int voiture,int time);
+    void newNbTours(int voiture,int nb);
+    void start();
+    void stop();
 
 
 };

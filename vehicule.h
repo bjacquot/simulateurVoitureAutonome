@@ -30,8 +30,12 @@ public:
 
     std::chrono::time_point<std::chrono::high_resolution_clock> getTimeStart() const;
 
+    int getNbTour() const;
+
 public slots:
     void setIsCollisions(bool newIsCollisions);
+    void start();
+    void stop();
 
 private:
     CommunicationTCP tcp;
@@ -44,6 +48,9 @@ private:
     bool isCollisions=true;
     bool isOnStartLine=false;
     bool waitFirstTour=true;
+    int nbTour=0;
+
+    bool isRunning=false;
     Circuit &circuit;
 
     std::chrono::time_point<std::chrono::high_resolution_clock> timeStartTour,timeStart;

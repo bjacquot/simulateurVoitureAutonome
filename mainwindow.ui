@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1698</width>
-    <height>758</height>
+    <width>1621</width>
+    <height>912</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -49,6 +49,241 @@
             </property>
             <property name="text">
              <string>init all</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_5">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QLCDNumber" name="nbTour1">
+            <property name="minimumSize">
+             <size>
+              <width>25</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>15</pointsize>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::NoFrame</enum>
+            </property>
+            <property name="lineWidth">
+             <number>0</number>
+            </property>
+            <property name="midLineWidth">
+             <number>0</number>
+            </property>
+            <property name="smallDecimalPoint">
+             <bool>true</bool>
+            </property>
+            <property name="digitCount">
+             <number>1</number>
+            </property>
+            <property name="segmentStyle">
+             <enum>QLCDNumber::Filled</enum>
+            </property>
+            <property name="intValue" stdset="0">
+             <number>12345</number>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLCDNumber" name="nbTour2">
+            <property name="minimumSize">
+             <size>
+              <width>25</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>15</pointsize>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::NoFrame</enum>
+            </property>
+            <property name="lineWidth">
+             <number>0</number>
+            </property>
+            <property name="midLineWidth">
+             <number>0</number>
+            </property>
+            <property name="smallDecimalPoint">
+             <bool>true</bool>
+            </property>
+            <property name="digitCount">
+             <number>1</number>
+            </property>
+            <property name="segmentStyle">
+             <enum>QLCDNumber::Filled</enum>
+            </property>
+            <property name="intValue" stdset="0">
+             <number>12345</number>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLCDNumber" name="nbTour3">
+            <property name="minimumSize">
+             <size>
+              <width>25</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>15</pointsize>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::NoFrame</enum>
+            </property>
+            <property name="lineWidth">
+             <number>0</number>
+            </property>
+            <property name="midLineWidth">
+             <number>0</number>
+            </property>
+            <property name="smallDecimalPoint">
+             <bool>true</bool>
+            </property>
+            <property name="digitCount">
+             <number>1</number>
+            </property>
+            <property name="segmentStyle">
+             <enum>QLCDNumber::Filled</enum>
+            </property>
+            <property name="intValue" stdset="0">
+             <number>12345</number>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLCDNumber" name="nbTour4">
+            <property name="minimumSize">
+             <size>
+              <width>25</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>15</pointsize>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::NoFrame</enum>
+            </property>
+            <property name="lineWidth">
+             <number>0</number>
+            </property>
+            <property name="midLineWidth">
+             <number>0</number>
+            </property>
+            <property name="smallDecimalPoint">
+             <bool>true</bool>
+            </property>
+            <property name="digitCount">
+             <number>1</number>
+            </property>
+            <property name="segmentStyle">
+             <enum>QLCDNumber::Filled</enum>
+            </property>
+            <property name="intValue" stdset="0">
+             <number>12345</number>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLCDNumber" name="nbTour5">
+            <property name="minimumSize">
+             <size>
+              <width>25</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>15</pointsize>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::NoFrame</enum>
+            </property>
+            <property name="lineWidth">
+             <number>0</number>
+            </property>
+            <property name="midLineWidth">
+             <number>0</number>
+            </property>
+            <property name="smallDecimalPoint">
+             <bool>true</bool>
+            </property>
+            <property name="digitCount">
+             <number>1</number>
+            </property>
+            <property name="segmentStyle">
+             <enum>QLCDNumber::Filled</enum>
+            </property>
+            <property name="intValue" stdset="0">
+             <number>12345</number>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLCDNumber" name="nbTour6">
+            <property name="minimumSize">
+             <size>
+              <width>25</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>15</pointsize>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::NoFrame</enum>
+            </property>
+            <property name="lineWidth">
+             <number>0</number>
+            </property>
+            <property name="midLineWidth">
+             <number>0</number>
+            </property>
+            <property name="smallDecimalPoint">
+             <bool>true</bool>
+            </property>
+            <property name="digitCount">
+             <number>1</number>
+            </property>
+            <property name="segmentStyle">
+             <enum>QLCDNumber::Filled</enum>
+            </property>
+            <property name="intValue" stdset="0">
+             <number>12345</number>
             </property>
            </widget>
           </item>
@@ -436,6 +671,259 @@
             </property>
             <property name="text">
              <string>collisions</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_6">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QLCDNumber" name="nbTour1_2">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>25</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>15</pointsize>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::NoFrame</enum>
+            </property>
+            <property name="lineWidth">
+             <number>0</number>
+            </property>
+            <property name="midLineWidth">
+             <number>0</number>
+            </property>
+            <property name="smallDecimalPoint">
+             <bool>true</bool>
+            </property>
+            <property name="digitCount">
+             <number>1</number>
+            </property>
+            <property name="segmentStyle">
+             <enum>QLCDNumber::Filled</enum>
+            </property>
+            <property name="intValue" stdset="0">
+             <number>12345</number>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLCDNumber" name="nbTour1_3">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>25</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>15</pointsize>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::NoFrame</enum>
+            </property>
+            <property name="lineWidth">
+             <number>0</number>
+            </property>
+            <property name="midLineWidth">
+             <number>0</number>
+            </property>
+            <property name="smallDecimalPoint">
+             <bool>true</bool>
+            </property>
+            <property name="digitCount">
+             <number>1</number>
+            </property>
+            <property name="segmentStyle">
+             <enum>QLCDNumber::Filled</enum>
+            </property>
+            <property name="intValue" stdset="0">
+             <number>12345</number>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLCDNumber" name="nbTour1_4">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>25</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>15</pointsize>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::NoFrame</enum>
+            </property>
+            <property name="lineWidth">
+             <number>0</number>
+            </property>
+            <property name="midLineWidth">
+             <number>0</number>
+            </property>
+            <property name="smallDecimalPoint">
+             <bool>true</bool>
+            </property>
+            <property name="digitCount">
+             <number>1</number>
+            </property>
+            <property name="segmentStyle">
+             <enum>QLCDNumber::Filled</enum>
+            </property>
+            <property name="intValue" stdset="0">
+             <number>12345</number>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLCDNumber" name="nbTour1_5">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>25</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>15</pointsize>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::NoFrame</enum>
+            </property>
+            <property name="lineWidth">
+             <number>0</number>
+            </property>
+            <property name="midLineWidth">
+             <number>0</number>
+            </property>
+            <property name="smallDecimalPoint">
+             <bool>true</bool>
+            </property>
+            <property name="digitCount">
+             <number>1</number>
+            </property>
+            <property name="segmentStyle">
+             <enum>QLCDNumber::Filled</enum>
+            </property>
+            <property name="intValue" stdset="0">
+             <number>12345</number>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLCDNumber" name="nbTour1_6">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>25</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>15</pointsize>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::NoFrame</enum>
+            </property>
+            <property name="lineWidth">
+             <number>0</number>
+            </property>
+            <property name="midLineWidth">
+             <number>0</number>
+            </property>
+            <property name="smallDecimalPoint">
+             <bool>true</bool>
+            </property>
+            <property name="digitCount">
+             <number>1</number>
+            </property>
+            <property name="segmentStyle">
+             <enum>QLCDNumber::Filled</enum>
+            </property>
+            <property name="intValue" stdset="0">
+             <number>12345</number>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLCDNumber" name="nbTour1_7">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>25</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>15</pointsize>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::NoFrame</enum>
+            </property>
+            <property name="lineWidth">
+             <number>0</number>
+            </property>
+            <property name="midLineWidth">
+             <number>0</number>
+            </property>
+            <property name="smallDecimalPoint">
+             <bool>true</bool>
+            </property>
+            <property name="digitCount">
+             <number>1</number>
+            </property>
+            <property name="segmentStyle">
+             <enum>QLCDNumber::Filled</enum>
+            </property>
+            <property name="intValue" stdset="0">
+             <number>12345</number>
             </property>
            </widget>
           </item>
@@ -843,6 +1331,39 @@
           <property name="bottomMargin">
            <number>0</number>
           </property>
+          <item>
+           <widget class="QPushButton" name="bpStart">
+            <property name="text">
+             <string>start</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="bpStop">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="text">
+             <string>stop</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="verticalSpacer_5">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Fixed</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
           <item>
            <widget class="QCheckBox" name="checkLidar">
             <property name="text">

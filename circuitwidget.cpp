@@ -99,31 +99,37 @@ void CircuitWidget::paintEvent(QPaintEvent *event)
     chrono::duration diff = duration_cast<std::chrono::milliseconds>(currentTime-startTime);
     emit newTimeVoiture(1,diff.count());
     emit newBestTimeVoiture(1,voiture1.voiture->getBestTime());
+    emit newNbTour(1,voiture1.voiture->getNbTour());
 
     startTime=voiture2.voiture->getTimeStart();
     diff = duration_cast<std::chrono::milliseconds>(currentTime-startTime);
     emit newTimeVoiture(2,diff.count());
     emit newBestTimeVoiture(2,voiture2.voiture->getBestTime());
+    emit newNbTour(2,voiture2.voiture->getNbTour());
 
     startTime=voiture3.voiture->getTimeStart();
     diff = duration_cast<std::chrono::milliseconds>(currentTime-startTime);
     emit newTimeVoiture(3,diff.count());
     emit newBestTimeVoiture(3,voiture3.voiture->getBestTime());
+    emit newNbTour(3,voiture3.voiture->getNbTour());
 
     startTime=voiture4.voiture->getTimeStart();
     diff = duration_cast<std::chrono::milliseconds>(currentTime-startTime);
     emit newTimeVoiture(4,diff.count());
     emit newBestTimeVoiture(4,voiture4.voiture->getBestTime());
+    emit newNbTour(4,voiture4.voiture->getNbTour());
 
     startTime=voiture5.voiture->getTimeStart();
     diff = duration_cast<std::chrono::milliseconds>(currentTime-startTime);
     emit newTimeVoiture(5,diff.count());
     emit newBestTimeVoiture(5,voiture5.voiture->getBestTime());
+    emit newNbTour(5,voiture5.voiture->getNbTour());
 
     startTime=voiture6.voiture->getTimeStart();
     diff = duration_cast<std::chrono::milliseconds>(currentTime-startTime);
     emit newTimeVoiture(6,diff.count());
     emit newBestTimeVoiture(6,voiture6.voiture->getBestTime());
+    emit newNbTour(6,voiture6.voiture->getNbTour());
 
 }
 

@@ -70,6 +70,7 @@ public slots:
 signals:
     void newTimeVoiture(int voiture,int time);
     void newBestTimeVoiture(int voiture,int time);
+    void newNbTour(int voiture,int time);
 };
 
 #endif // CIRCUITWIDGET_H

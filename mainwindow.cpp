@@ -151,9 +151,16 @@ MainWindow::MainWindow(int nbVoitures, QWidget *parent)
             this,&MainWindow::newTimeVoiture);
     connect(&circuit,&CircuitWidget::newBestTimeVoiture,
             this,&MainWindow::newBestTimeVoiture);
+    connect(&circuit,&CircuitWidget::newNbTour,
+            this,&MainWindow::newNbTours);
 
     connect(ui->checkLidar,&QCheckBox::clicked,
             &circuit,&CircuitWidget::enableLidar);
+
+    connect(ui->bpStart,&QPushButton::clicked,
+            this,&MainWindow::start);
+    connect(ui->bpStop,&QPushButton::clicked,
+            this,&MainWindow::stop);
 
     resize(1000,900);
 }
@@ -196,4 +203,46 @@ void MainWindow::newBestTimeVoiture(int voiture, int time)
     }
     if (time>99999) time=0;
     if (lcd!=nullptr) lcd->display(time);
+}
+
+void MainWindow::newNbTours(int voiture, int nb)
+{
+    QLCDNumber * lcd=nullptr;
+    switch (voiture) {
+    case 1:lcd=ui->nbTour1;break;
+    case 2:lcd=ui->nbTour2;break;
+    case 3:lcd=ui->nbTour3;break;
+    case 4:lcd=ui->nbTour4;break;
+    case 5:lcd=ui->nbTour5;break;
+    case 6:lcd=ui->nbTour6;break;
+    default:
+        break;
+    }
+    if (lcd!=nullptr) lcd->display(nb);
+}
+
+void MainWindow::start()
+{
+    ui->bpStart->setDisabled(true);
+    ui->bpStop->setEnabled(true);
+
+    circuit.voiture1.voiture->start();
+    circuit.voiture2.voiture->start();
+    circuit.voiture3.voiture->start();
+    circuit.voiture4.voiture->start();
+    circuit.voiture5.voiture->start();
+    circuit.voiture6.voiture->start();
+}
+
+void MainWindow::stop()
+{
+    ui->bpStart->setEnabled(true);
+    ui->bpStop->setDisabled(true);
+
+    circuit.voiture1.voiture->stop();
+    circuit.voiture2.voiture->stop();
+    circuit.voiture3.voiture->stop();
+    circuit.voiture4.voiture->stop();
+    circuit.voiture5.voiture->stop();
+    circuit.voiture6.voiture->stop();
 }

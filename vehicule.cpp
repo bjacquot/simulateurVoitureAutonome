@@ -108,6 +108,7 @@ void Vehicule::initPos()
     bestTime=9999999;
     timeStartTour=time;
     timeStart=time;
+    nbTour=0;
 }
 
 
@@ -119,6 +120,11 @@ QVector<QLineF> Vehicule::getLinesLidar() const
 double Vehicule::orientationRadian()
 {
     return qDegreesToRadians(orientation);
+}
+
+int Vehicule::getNbTour() const
+{
+    return nbTour;
 }
 
 std::chrono::time_point<std::chrono::high_resolution_clock> Vehicule::getTimeStart() const
@@ -141,6 +147,16 @@ void Vehicule::setIsCollisions(bool newIsCollisions)
     isCollisions = newIsCollisions;
 }
 
+void Vehicule::start()
+{
+    isRunning=true;
+}
+
+void Vehicule::stop()
+{
+    isRunning=false;
+}
+
 bool Vehicule::getIsConnected() const
 {
     return isConnected;
@@ -153,16 +169,19 @@ const array<int, 360> & Vehicule::getDistance() const
 
 void Vehicule::move()
 {
+    if (isRunning)
     //if (orientation<180) orientation++; else orientation=-180;
-    double distance=(vitesse_mm_s*periode_ms)/1000.0;
-    double dTeta=0;
-    if (rayonCourbure!=0)
     {
-        dTeta=distance/rayonCourbure;
+        double distance=(vitesse_mm_s*periode_ms)/1000.0;
+        double dTeta=0;
+        if (rayonCourbure!=0)
+        {
+            dTeta=distance/rayonCourbure;
+        }
+        orientation-=qRadiansToDegrees(dTeta);
+        //orientation+=0.05;
+        position+=QPointF(distance*cos(qDegreesToRadians(-orientation)),distance*sin(qDegreesToRadians(+orientation)));
     }
-    orientation-=qRadiansToDegrees(dTeta);
-    //orientation+=0.05;
-    position+=QPointF(distance*cos(qDegreesToRadians(-orientation)),distance*sin(qDegreesToRadians(+orientation)));
 
     QPointF avDroit=position+QPointF(-largeurRobot/2*sin(qDegreesToRadians(orientation))+longueurRobot/2*cos(qDegreesToRadians(orientation))
                                           ,largeurRobot/2*cos(qDegreesToRadians(-orientation))+longueurRobot/2*sin(qDegreesToRadians(orientation)));
@@ -198,6 +217,7 @@ void Vehicule::move()
             if (waitFirstTour==false)
             {
                 if (duree<bestTime) bestTime=duree;
+                nbTour++;
             }
             else
             {
