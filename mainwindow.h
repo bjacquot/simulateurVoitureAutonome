@@ -23,5 +23,10 @@ private:
     Ui::MainWindow *ui;
     CircuitWidget circuit;
 
+private slots:
+    void newTimeVoiture(int voiture,int time);
+    void newBestTimeVoiture(int voiture,int time);
+
+
 };
 #endif // MAINWINDOW_H

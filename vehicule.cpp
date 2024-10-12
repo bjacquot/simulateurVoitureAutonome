@@ -1,6 +1,11 @@
 #include "vehicule.h"
 #include <QtMath>
 #include <QDebug>
+#include <chrono>
+using std::chrono::high_resolution_clock;
+using std::chrono::duration_cast;
+using std::chrono::duration;
+using std::chrono::milliseconds;
 
 Vehicule::Vehicule(int posX, int posY, int port, Circuit &_circuit)
     : tcp(port)
@@ -96,8 +101,13 @@ void Vehicule::updateLidar()
 
 void Vehicule::initPos()
 {
+    std::chrono::time_point<std::chrono::high_resolution_clock> time;
     position=positionInit;
     orientation=0;
+    waitFirstTour=true;
+    bestTime=9999999;
+    timeStartTour=time;
+    timeStart=time;
 }
 
 
@@ -109,6 +119,21 @@ QVector<QLineF> Vehicule::getLinesLidar() const
 double Vehicule::orientationRadian()
 {
     return qDegreesToRadians(orientation);
+}
+
+std::chrono::time_point<std::chrono::high_resolution_clock> Vehicule::getTimeStart() const
+{
+    return timeStart;
+}
+
+int Vehicule::getBestTime() const
+{
+    return bestTime;
+}
+
+std::chrono::time_point<std::chrono::high_resolution_clock> Vehicule::getTimeStartTour() const
+{
+    return timeStartTour;
 }
 
 void Vehicule::setIsCollisions(bool newIsCollisions)
@@ -160,6 +185,34 @@ void Vehicule::move()
 
     circuit.linesVehicules[indiceMyLines+3].setP1(arGauche);
     circuit.linesVehicules[indiceMyLines+3].setP2(avGauche);
+
+    QPointF p;
+    if (circuit.startLine.intersects(circuit.linesVehicules[indiceMyLines+1],&p)==QLineF::BoundedIntersection)
+    {
+        qDebug()<<"tour";
+        if (isOnStartLine==false)
+        {
+            std::chrono::time_point<std::chrono::high_resolution_clock> currentTime=high_resolution_clock::now();
+            chrono::duration diff = duration_cast<std::chrono::milliseconds>(currentTime-timeStartTour);
+            int duree=diff.count();
+            if (waitFirstTour==false)
+            {
+                if (duree<bestTime) bestTime=duree;
+            }
+            else
+            {
+                    timeStart=currentTime;
+            }
+            timeStartTour=currentTime;
+            waitFirstTour=false;
+        }
+        isOnStartLine=true;
+    }
+    else
+    {
+        isOnStartLine=false;
+    }
+
 }
 
 void Vehicule::sendTcp()

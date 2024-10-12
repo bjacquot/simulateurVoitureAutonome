@@ -2,6 +2,11 @@
 
 #include <QDebug>
 #include <QtMath>
+#include <chrono>
+using std::chrono::high_resolution_clock;
+using std::chrono::duration_cast;
+using std::chrono::duration;
+using std::chrono::milliseconds;
 
 CircuitWidget::CircuitWidget(int _nbVoitures, QWidget *parent)
     : QWidget{parent}
@@ -67,6 +72,10 @@ void CircuitWidget::paintEvent(QPaintEvent *event)
     pen.setColor(Qt::green);
     painter.setPen(pen);
     painter.drawLines(circuit.linesGauche);
+    pen.setWidth(10/zoom);
+    pen.setColor(Qt::magenta);
+    painter.setPen(pen);
+    painter.drawLine(circuit.startLine);
 
 
     drawVehicule(voiture1.voiture,Qt::cyan,painter);
@@ -83,6 +92,38 @@ void CircuitWidget::paintEvent(QPaintEvent *event)
     painter.drawLines(circuit.linesVehicules);
 
 
+    auto currentTime = high_resolution_clock::now();
+    std::chrono::time_point<std::chrono::high_resolution_clock> startTime;
+
+    startTime=voiture1.voiture->getTimeStart();
+    chrono::duration diff = duration_cast<std::chrono::milliseconds>(currentTime-startTime);
+    emit newTimeVoiture(1,diff.count());
+    emit newBestTimeVoiture(1,voiture1.voiture->getBestTime());
+
+    startTime=voiture2.voiture->getTimeStart();
+    diff = duration_cast<std::chrono::milliseconds>(currentTime-startTime);
+    emit newTimeVoiture(2,diff.count());
+    emit newBestTimeVoiture(2,voiture2.voiture->getBestTime());
+
+    startTime=voiture3.voiture->getTimeStart();
+    diff = duration_cast<std::chrono::milliseconds>(currentTime-startTime);
+    emit newTimeVoiture(3,diff.count());
+    emit newBestTimeVoiture(3,voiture3.voiture->getBestTime());
+
+    startTime=voiture4.voiture->getTimeStart();
+    diff = duration_cast<std::chrono::milliseconds>(currentTime-startTime);
+    emit newTimeVoiture(4,diff.count());
+    emit newBestTimeVoiture(4,voiture4.voiture->getBestTime());
+
+    startTime=voiture5.voiture->getTimeStart();
+    diff = duration_cast<std::chrono::milliseconds>(currentTime-startTime);
+    emit newTimeVoiture(5,diff.count());
+    emit newBestTimeVoiture(5,voiture5.voiture->getBestTime());
+
+    startTime=voiture6.voiture->getTimeStart();
+    diff = duration_cast<std::chrono::milliseconds>(currentTime-startTime);
+    emit newTimeVoiture(6,diff.count());
+    emit newBestTimeVoiture(6,voiture6.voiture->getBestTime());
 
 }
 
@@ -130,6 +171,10 @@ void CircuitWidget::loadCircuit1()
     coteGauche.append(SegmentPiste(virageP90,500));
     coteGauche.append(SegmentPiste(droit,2600));
 
+    yposCoteDroit=-2000;
+    yposCoteGauche=-3000;
+    startLine=QLine(500,yposCoteDroit,500,yposCoteGauche);
+
     createCircuit();
 }
 
@@ -176,6 +221,10 @@ void CircuitWidget::loadCircuit2()
     coteGauche.append(SegmentPiste(droit,1500));
     coteGauche.append(SegmentPiste(virageP90,500));
     coteGauche.append(SegmentPiste(droit,2600));
+
+    yposCoteDroit=-2000;
+    yposCoteGauche=-3000;
+    startLine=QLine(500,yposCoteDroit,500,yposCoteGauche);
 
     createCircuit();
 }
@@ -228,8 +277,9 @@ void CircuitWidget::moveGauche()
 
 void CircuitWidget::createCircuit()
 {
-    updateLines(coteDroit,circuit.linesDroit,-2000);
-    updateLines(coteGauche,circuit.linesGauche,-3000);
+    updateLines(coteDroit,circuit.linesDroit,yposCoteDroit);
+    updateLines(coteGauche,circuit.linesGauche,yposCoteGauche);
+    circuit.startLine=startLine;
 
     voiture1.voiture->initPos();
     voiture2.voiture->initPos();
@@ -297,6 +347,7 @@ void CircuitWidget::updateLines(const QList<SegmentPiste> &cote, QVector<QLineF>
     }
 
 
+
 }
 
 void CircuitWidget::drawVehicule(Vehicule *vehicule, const QColor &color, QPainter &painter)
@@ -306,12 +357,17 @@ void CircuitWidget::drawVehicule(Vehicule *vehicule, const QColor &color, QPaint
     pen.setColor(color);
     painter.setBrush(color);
     painter.setPen(pen);
-    if (vehicule->getIsConnected()) painter.drawLines(vehicule->getLinesLidar());
-    else                                    painter.drawEllipse(vehicule->getPosition(),70,70);
+    if ((showLidar==true)and(vehicule->getIsConnected()))   painter.drawLines(vehicule->getLinesLidar());
+    else                                                    painter.drawEllipse(vehicule->getPosition(),70,70);
 }
 
 void CircuitWidget::maj()
 {
     update();
+}
+
+void CircuitWidget::enableLidar(bool state)
+{
+    showLidar=state;
 }
 

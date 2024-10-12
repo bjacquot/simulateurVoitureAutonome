@@ -24,6 +24,19 @@ MainWindow::MainWindow(int nbVoitures, QWidget *parent)
     ui->checkBox_5->setStyleSheet("background-color:green;");
     ui->checkBox_6->setStyleSheet("background-color:gray;");
 
+    ui->voitureTime1->setStyleSheet("background-color:cyan;");
+    ui->voitureBestTime1->setStyleSheet("background-color:cyan;");
+    ui->voitureTime2->setStyleSheet("background-color:darkRed;");
+    ui->voitureBestTime2->setStyleSheet("background-color:darkRed;");
+    ui->voitureTime3->setStyleSheet("background-color:blue;");
+    ui->voitureBestTime3->setStyleSheet("background-color:blue;");
+    ui->voitureTime4->setStyleSheet("background-color:magenta;");
+    ui->voitureBestTime4->setStyleSheet("background-color:magenta;");
+    ui->voitureTime5->setStyleSheet("background-color:green;");
+    ui->voitureBestTime5->setStyleSheet("background-color:green;");
+    ui->voitureTime6->setStyleSheet("background-color:gray;");
+    ui->voitureBestTime6->setStyleSheet("background-color:gray;");
+
     ui->checkBox_1->setChecked(true);
     ui->checkBox_2->setChecked(true);
     ui->checkBox_3->setChecked(true);
@@ -134,10 +147,53 @@ MainWindow::MainWindow(int nbVoitures, QWidget *parent)
     connect(ui->bpMoveGauche,&QPushButton::clicked,
             &circuit,&CircuitWidget::moveGauche);
 
+    connect(&circuit,&CircuitWidget::newTimeVoiture,
+            this,&MainWindow::newTimeVoiture);
+    connect(&circuit,&CircuitWidget::newBestTimeVoiture,
+            this,&MainWindow::newBestTimeVoiture);
+
+    connect(ui->checkLidar,&QCheckBox::clicked,
+            &circuit,&CircuitWidget::enableLidar);
+
     resize(1000,900);
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+void MainWindow::newTimeVoiture(int voiture, int time)
+{
+    QLCDNumber * lcd=nullptr;
+    switch (voiture) {
+    case 1:lcd=ui->voitureTime1;break;
+    case 2:lcd=ui->voitureTime2;break;
+    case 3:lcd=ui->voitureTime3;break;
+    case 4:lcd=ui->voitureTime4;break;
+    case 5:lcd=ui->voitureTime5;break;
+    case 6:lcd=ui->voitureTime6;break;
+    default:
+        break;
+    }
+    if (time>99999) time=0;
+    if (time<0) time=0;
+    if (lcd!=nullptr) lcd->display(time);
+}
+
+void MainWindow::newBestTimeVoiture(int voiture, int time)
+{
+    QLCDNumber * lcd=nullptr;
+    switch (voiture) {
+    case 1:lcd=ui->voitureBestTime1;break;
+    case 2:lcd=ui->voitureBestTime2;break;
+    case 3:lcd=ui->voitureBestTime3;break;
+    case 4:lcd=ui->voitureBestTime4;break;
+    case 5:lcd=ui->voitureBestTime5;break;
+    case 6:lcd=ui->voitureBestTime6;break;
+    default:
+        break;
+    }
+    if (time>99999) time=0;
+    if (lcd!=nullptr) lcd->display(time);
 }

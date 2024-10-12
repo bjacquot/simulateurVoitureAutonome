@@ -12,6 +12,8 @@ public:
     QVector<QLineF> linesGauche;
     QVector<QLineF> linesVehicules;
 
+    QLineF startLine;
+
 };
 
 #endif // CIRCUIT_H

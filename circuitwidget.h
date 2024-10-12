@@ -34,7 +34,13 @@ protected:
 
     QList <SegmentPiste>  coteDroit;
     QList <SegmentPiste>  coteGauche;
+    int yposCoteDroit;
+    int yposCoteGauche;
+    QLine startLine;
+
     QTimer tictoc;
+
+    bool showLidar=true;
 
     void createCircuit();
 
@@ -47,6 +53,8 @@ private slots:
     void maj();
 
 public slots:
+    void enableLidar(bool state);
+
     void loadCircuit1();
     void loadCircuit2();
     void loadCircuit3();
@@ -60,6 +68,8 @@ public slots:
     void moveGauche();
 
 signals:
+    void newTimeVoiture(int voiture,int time);
+    void newBestTimeVoiture(int voiture,int time);
 };
 
 #endif // CIRCUITWIDGET_H

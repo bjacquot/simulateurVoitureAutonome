@@ -24,6 +24,12 @@ public:
 
     bool getIsConnected() const;
 
+    std::chrono::time_point<std::chrono::high_resolution_clock> getTimeStartTour() const;
+
+    int getBestTime() const;
+
+    std::chrono::time_point<std::chrono::high_resolution_clock> getTimeStart() const;
+
 public slots:
     void setIsCollisions(bool newIsCollisions);
 
@@ -36,7 +42,12 @@ private:
     double orientationRadian();
     bool isConnected=false;
     bool isCollisions=true;
+    bool isOnStartLine=false;
+    bool waitFirstTour=true;
     Circuit &circuit;
+
+    std::chrono::time_point<std::chrono::high_resolution_clock> timeStartTour,timeStart;
+    int bestTime=9999999;
 
     const double largeurRobot;
     const double longueurRobot;

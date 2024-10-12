@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
+    <width>1698</width>
     <height>758</height>
    </rect>
   </property>
@@ -20,7 +20,7 @@
       <property name="minimumSize">
        <size>
         <width>0</width>
-        <height>100</height>
+        <height>110</height>
        </size>
       </property>
       <property name="maximumSize">
@@ -53,6 +53,241 @@
            </widget>
           </item>
           <item>
+           <spacer name="horizontalSpacer_3">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QLCDNumber" name="voitureTime1">
+            <property name="minimumSize">
+             <size>
+              <width>80</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>15</pointsize>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::NoFrame</enum>
+            </property>
+            <property name="lineWidth">
+             <number>0</number>
+            </property>
+            <property name="midLineWidth">
+             <number>0</number>
+            </property>
+            <property name="smallDecimalPoint">
+             <bool>true</bool>
+            </property>
+            <property name="digitCount">
+             <number>5</number>
+            </property>
+            <property name="segmentStyle">
+             <enum>QLCDNumber::Filled</enum>
+            </property>
+            <property name="intValue" stdset="0">
+             <number>12345</number>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLCDNumber" name="voitureTime2">
+            <property name="minimumSize">
+             <size>
+              <width>80</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>15</pointsize>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::NoFrame</enum>
+            </property>
+            <property name="lineWidth">
+             <number>0</number>
+            </property>
+            <property name="midLineWidth">
+             <number>0</number>
+            </property>
+            <property name="smallDecimalPoint">
+             <bool>true</bool>
+            </property>
+            <property name="digitCount">
+             <number>5</number>
+            </property>
+            <property name="segmentStyle">
+             <enum>QLCDNumber::Filled</enum>
+            </property>
+            <property name="intValue" stdset="0">
+             <number>12345</number>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLCDNumber" name="voitureTime3">
+            <property name="minimumSize">
+             <size>
+              <width>80</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>15</pointsize>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::NoFrame</enum>
+            </property>
+            <property name="lineWidth">
+             <number>0</number>
+            </property>
+            <property name="midLineWidth">
+             <number>0</number>
+            </property>
+            <property name="smallDecimalPoint">
+             <bool>true</bool>
+            </property>
+            <property name="digitCount">
+             <number>5</number>
+            </property>
+            <property name="segmentStyle">
+             <enum>QLCDNumber::Filled</enum>
+            </property>
+            <property name="intValue" stdset="0">
+             <number>12345</number>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLCDNumber" name="voitureTime4">
+            <property name="minimumSize">
+             <size>
+              <width>80</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>15</pointsize>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::NoFrame</enum>
+            </property>
+            <property name="lineWidth">
+             <number>0</number>
+            </property>
+            <property name="midLineWidth">
+             <number>0</number>
+            </property>
+            <property name="smallDecimalPoint">
+             <bool>true</bool>
+            </property>
+            <property name="digitCount">
+             <number>5</number>
+            </property>
+            <property name="segmentStyle">
+             <enum>QLCDNumber::Filled</enum>
+            </property>
+            <property name="intValue" stdset="0">
+             <number>12345</number>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLCDNumber" name="voitureTime5">
+            <property name="minimumSize">
+             <size>
+              <width>80</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>15</pointsize>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::NoFrame</enum>
+            </property>
+            <property name="lineWidth">
+             <number>0</number>
+            </property>
+            <property name="midLineWidth">
+             <number>0</number>
+            </property>
+            <property name="smallDecimalPoint">
+             <bool>true</bool>
+            </property>
+            <property name="digitCount">
+             <number>5</number>
+            </property>
+            <property name="segmentStyle">
+             <enum>QLCDNumber::Filled</enum>
+            </property>
+            <property name="intValue" stdset="0">
+             <number>12345</number>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLCDNumber" name="voitureTime6">
+            <property name="minimumSize">
+             <size>
+              <width>80</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>15</pointsize>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::NoFrame</enum>
+            </property>
+            <property name="lineWidth">
+             <number>0</number>
+            </property>
+            <property name="midLineWidth">
+             <number>0</number>
+            </property>
+            <property name="smallDecimalPoint">
+             <bool>true</bool>
+            </property>
+            <property name="digitCount">
+             <number>5</number>
+            </property>
+            <property name="segmentStyle">
+             <enum>QLCDNumber::Filled</enum>
+            </property>
+            <property name="intValue" stdset="0">
+             <number>12345</number>
+            </property>
+           </widget>
+          </item>
+          <item>
            <spacer name="horizontalSpacer">
             <property name="orientation">
              <enum>Qt::Horizontal</enum>
@@ -69,18 +304,18 @@
            <widget class="QPushButton" name="bpResetVoiture1">
             <property name="minimumSize">
              <size>
-              <width>80</width>
+              <width>40</width>
               <height>0</height>
              </size>
             </property>
             <property name="maximumSize">
              <size>
-              <width>80</width>
+              <width>40</width>
               <height>16777215</height>
              </size>
             </property>
             <property name="text">
-             <string>init V1</string>
+             <string>init</string>
             </property>
            </widget>
           </item>
@@ -88,18 +323,18 @@
            <widget class="QPushButton" name="bpResetVoiture2">
             <property name="minimumSize">
              <size>
-              <width>80</width>
+              <width>40</width>
               <height>0</height>
              </size>
             </property>
             <property name="maximumSize">
              <size>
-              <width>80</width>
+              <width>40</width>
               <height>16777215</height>
              </size>
             </property>
             <property name="text">
-             <string>init V2</string>
+             <string>init</string>
             </property>
            </widget>
           </item>
@@ -107,18 +342,18 @@
            <widget class="QPushButton" name="bpResetVoiture3">
             <property name="minimumSize">
              <size>
-              <width>80</width>
+              <width>40</width>
               <height>0</height>
              </size>
             </property>
             <property name="maximumSize">
              <size>
-              <width>80</width>
+              <width>40</width>
               <height>16777215</height>
              </size>
             </property>
             <property name="text">
-             <string>init V3</string>
+             <string>init</string>
             </property>
            </widget>
           </item>
@@ -126,18 +361,18 @@
            <widget class="QPushButton" name="bpResetVoiture4">
             <property name="minimumSize">
              <size>
-              <width>80</width>
+              <width>40</width>
               <height>0</height>
              </size>
             </property>
             <property name="maximumSize">
              <size>
-              <width>80</width>
+              <width>40</width>
               <height>16777215</height>
              </size>
             </property>
             <property name="text">
-             <string>init V4</string>
+             <string>init</string>
             </property>
            </widget>
           </item>
@@ -145,18 +380,18 @@
            <widget class="QPushButton" name="bpResetVoiture5">
             <property name="minimumSize">
              <size>
-              <width>80</width>
+              <width>40</width>
               <height>0</height>
              </size>
             </property>
             <property name="maximumSize">
              <size>
-              <width>80</width>
+              <width>40</width>
               <height>16777215</height>
              </size>
             </property>
             <property name="text">
-             <string>init V5</string>
+             <string>init</string>
             </property>
            </widget>
           </item>
@@ -164,18 +399,18 @@
            <widget class="QPushButton" name="bpResetVoiture6">
             <property name="minimumSize">
              <size>
-              <width>80</width>
+              <width>40</width>
               <height>0</height>
              </size>
             </property>
             <property name="maximumSize">
              <size>
-              <width>80</width>
+              <width>40</width>
               <height>16777215</height>
              </size>
             </property>
             <property name="text">
-             <string>init V6</string>
+             <string>init</string>
             </property>
            </widget>
           </item>
@@ -205,6 +440,241 @@
            </widget>
           </item>
           <item>
+           <spacer name="horizontalSpacer_4">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QLCDNumber" name="voitureBestTime1">
+            <property name="minimumSize">
+             <size>
+              <width>80</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>15</pointsize>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::NoFrame</enum>
+            </property>
+            <property name="lineWidth">
+             <number>0</number>
+            </property>
+            <property name="midLineWidth">
+             <number>0</number>
+            </property>
+            <property name="smallDecimalPoint">
+             <bool>true</bool>
+            </property>
+            <property name="digitCount">
+             <number>5</number>
+            </property>
+            <property name="segmentStyle">
+             <enum>QLCDNumber::Filled</enum>
+            </property>
+            <property name="intValue" stdset="0">
+             <number>12345</number>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLCDNumber" name="voitureBestTime2">
+            <property name="minimumSize">
+             <size>
+              <width>80</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>15</pointsize>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::NoFrame</enum>
+            </property>
+            <property name="lineWidth">
+             <number>0</number>
+            </property>
+            <property name="midLineWidth">
+             <number>0</number>
+            </property>
+            <property name="smallDecimalPoint">
+             <bool>true</bool>
+            </property>
+            <property name="digitCount">
+             <number>5</number>
+            </property>
+            <property name="segmentStyle">
+             <enum>QLCDNumber::Filled</enum>
+            </property>
+            <property name="intValue" stdset="0">
+             <number>12345</number>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLCDNumber" name="voitureBestTime3">
+            <property name="minimumSize">
+             <size>
+              <width>80</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>15</pointsize>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::NoFrame</enum>
+            </property>
+            <property name="lineWidth">
+             <number>0</number>
+            </property>
+            <property name="midLineWidth">
+             <number>0</number>
+            </property>
+            <property name="smallDecimalPoint">
+             <bool>true</bool>
+            </property>
+            <property name="digitCount">
+             <number>5</number>
+            </property>
+            <property name="segmentStyle">
+             <enum>QLCDNumber::Filled</enum>
+            </property>
+            <property name="intValue" stdset="0">
+             <number>12345</number>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLCDNumber" name="voitureBestTime4">
+            <property name="minimumSize">
+             <size>
+              <width>80</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>15</pointsize>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::NoFrame</enum>
+            </property>
+            <property name="lineWidth">
+             <number>0</number>
+            </property>
+            <property name="midLineWidth">
+             <number>0</number>
+            </property>
+            <property name="smallDecimalPoint">
+             <bool>true</bool>
+            </property>
+            <property name="digitCount">
+             <number>5</number>
+            </property>
+            <property name="segmentStyle">
+             <enum>QLCDNumber::Filled</enum>
+            </property>
+            <property name="intValue" stdset="0">
+             <number>12345</number>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLCDNumber" name="voitureBestTime5">
+            <property name="minimumSize">
+             <size>
+              <width>80</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>15</pointsize>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::NoFrame</enum>
+            </property>
+            <property name="lineWidth">
+             <number>0</number>
+            </property>
+            <property name="midLineWidth">
+             <number>0</number>
+            </property>
+            <property name="smallDecimalPoint">
+             <bool>true</bool>
+            </property>
+            <property name="digitCount">
+             <number>5</number>
+            </property>
+            <property name="segmentStyle">
+             <enum>QLCDNumber::Filled</enum>
+            </property>
+            <property name="intValue" stdset="0">
+             <number>12345</number>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLCDNumber" name="voitureBestTime6">
+            <property name="minimumSize">
+             <size>
+              <width>80</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>15</pointsize>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::NoFrame</enum>
+            </property>
+            <property name="lineWidth">
+             <number>0</number>
+            </property>
+            <property name="midLineWidth">
+             <number>0</number>
+            </property>
+            <property name="smallDecimalPoint">
+             <bool>true</bool>
+            </property>
+            <property name="digitCount">
+             <number>5</number>
+            </property>
+            <property name="segmentStyle">
+             <enum>QLCDNumber::Filled</enum>
+            </property>
+            <property name="intValue" stdset="0">
+             <number>12345</number>
+            </property>
+           </widget>
+          </item>
+          <item>
            <spacer name="horizontalSpacer_2">
             <property name="orientation">
              <enum>Qt::Horizontal</enum>
@@ -221,18 +691,18 @@
            <widget class="QCheckBox" name="checkBox_1">
             <property name="minimumSize">
              <size>
-              <width>80</width>
+              <width>40</width>
               <height>0</height>
              </size>
             </property>
             <property name="maximumSize">
              <size>
-              <width>80</width>
+              <width>40</width>
               <height>16777215</height>
              </size>
             </property>
             <property name="text">
-             <string>collisions</string>
+             <string>obs</string>
             </property>
            </widget>
           </item>
@@ -240,18 +710,18 @@
            <widget class="QCheckBox" name="checkBox_2">
             <property name="minimumSize">
              <size>
-              <width>80</width>
+              <width>40</width>
               <height>0</height>
              </size>
             </property>
             <property name="maximumSize">
              <size>
-              <width>80</width>
+              <width>40</width>
               <height>16777215</height>
              </size>
             </property>
             <property name="text">
-             <string>collisions</string>
+             <string>obs</string>
             </property>
            </widget>
           </item>
@@ -259,18 +729,18 @@
            <widget class="QCheckBox" name="checkBox_3">
             <property name="minimumSize">
              <size>
-              <width>80</width>
+              <width>40</width>
               <height>0</height>
              </size>
             </property>
             <property name="maximumSize">
              <size>
-              <width>80</width>
+              <width>40</width>
               <height>16777215</height>
              </size>
             </property>
             <property name="text">
-             <string>collisions</string>
+             <string>obs</string>
             </property>
            </widget>
           </item>
@@ -278,18 +748,18 @@
            <widget class="QCheckBox" name="checkBox_4">
             <property name="minimumSize">
              <size>
-              <width>80</width>
+              <width>40</width>
               <height>0</height>
              </size>
             </property>
             <property name="maximumSize">
              <size>
-              <width>80</width>
+              <width>40</width>
               <height>16777215</height>
              </size>
             </property>
             <property name="text">
-             <string>collisions</string>
+             <string>obs</string>
             </property>
            </widget>
           </item>
@@ -297,18 +767,18 @@
            <widget class="QCheckBox" name="checkBox_5">
             <property name="minimumSize">
              <size>
-              <width>80</width>
+              <width>40</width>
               <height>0</height>
              </size>
             </property>
             <property name="maximumSize">
              <size>
-              <width>80</width>
+              <width>40</width>
               <height>16777215</height>
              </size>
             </property>
             <property name="text">
-             <string>collisions</string>
+             <string>obs</string>
             </property>
            </widget>
           </item>
@@ -316,18 +786,18 @@
            <widget class="QCheckBox" name="checkBox_6">
             <property name="minimumSize">
              <size>
-              <width>80</width>
+              <width>40</width>
               <height>0</height>
              </size>
             </property>
             <property name="maximumSize">
              <size>
-              <width>80</width>
+              <width>40</width>
               <height>16777215</height>
              </size>
             </property>
             <property name="text">
-             <string>collisions</string>
+             <string>obs</string>
             </property>
            </widget>
           </item>
@@ -373,6 +843,32 @@
           <property name="bottomMargin">
            <number>0</number>
           </property>
+          <item>
+           <widget class="QCheckBox" name="checkLidar">
+            <property name="text">
+             <string>lidar</string>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="verticalSpacer_4">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Fixed</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
           <item>
            <widget class="QPushButton" name="bpZoomPlus">
             <property name="text">
