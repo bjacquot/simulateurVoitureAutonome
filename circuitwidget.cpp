@@ -11,12 +11,12 @@ using std::chrono::milliseconds;
 CircuitWidget::CircuitWidget(int _nbVoitures, QWidget *parent)
     : QWidget{parent}
     , nbVoitures(_nbVoitures)
-    , voiture1(0,-2500,8880,circuit)
-    , voiture2(-500,-2200,8881, circuit)
+    , voiture1(0,-2800,8880,circuit)
+    , voiture2(-250,-2200,8881, circuit)
     , voiture3(-500,-2800,8882, circuit)
-    , voiture4(-1000,-2200,8883, circuit)
-    , voiture5(-3000,-2800,8884, circuit)
-    , voiture6(-2500,-2800,8885, circuit)
+    , voiture4(-750,-2200,8883, circuit)
+    , voiture5(-1000,-2800,8884, circuit)
+    , voiture6(-1250,-2200,8885, circuit)
 {
 
     voiture1.mutex.lock();

@@ -24,6 +24,14 @@ MainWindow::MainWindow(int nbVoitures, QWidget *parent)
     ui->checkBox_5->setStyleSheet("background-color:green;");
     ui->checkBox_6->setStyleSheet("background-color:gray;");
 
+    ui->enableVoiture_1->setStyleSheet("background-color:cyan;");
+    ui->enableVoiture_2->setStyleSheet("background-color:darkRed;");
+    ui->enableVoiture_3->setStyleSheet("background-color:blue;");
+    ui->enableVoiture_4->setStyleSheet("background-color:magenta;");
+    ui->enableVoiture_5->setStyleSheet("background-color:green;");
+    ui->enableVoiture_6->setStyleSheet("background-color:gray;");
+
+
     ui->voitureTime1->setStyleSheet("background-color:cyan;");
     ui->voitureBestTime1->setStyleSheet("background-color:cyan;");
     ui->voitureTime2->setStyleSheet("background-color:darkRed;");
@@ -45,6 +53,21 @@ MainWindow::MainWindow(int nbVoitures, QWidget *parent)
     ui->checkBox_6->setChecked(true);
 
     ui->checkBox_all->setChecked(true);
+
+
+    connect(ui->enableVoiture_1,&QCheckBox::clicked,
+            circuit.voiture1.voiture,&Vehicule::setIsEnable);
+    connect(ui->enableVoiture_2,&QCheckBox::clicked,
+            circuit.voiture2.voiture,&Vehicule::setIsEnable);
+    connect(ui->enableVoiture_3,&QCheckBox::clicked,
+            circuit.voiture3.voiture,&Vehicule::setIsEnable);
+    connect(ui->enableVoiture_4,&QCheckBox::clicked,
+            circuit.voiture4.voiture,&Vehicule::setIsEnable);
+    connect(ui->enableVoiture_5,&QCheckBox::clicked,
+            circuit.voiture5.voiture,&Vehicule::setIsEnable);
+    connect(ui->enableVoiture_6,&QCheckBox::clicked,
+            circuit.voiture6.voiture,&Vehicule::setIsEnable);
+
 
     connect(ui->checkBox_1,&QCheckBox::clicked,
             circuit.voiture1.voiture,&Vehicule::setIsCollisions);

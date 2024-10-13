@@ -123,6 +123,17 @@ double Vehicule::orientationRadian()
     return qDegreesToRadians(orientation);
 }
 
+void Vehicule::setIsEnable(bool newIsEnable)
+{
+    isEnable = newIsEnable;
+    if (isEnable) initPos();
+    else
+    {
+        stop();
+        position=QPointF(-999999,-999999);
+    }
+}
+
 bool Vehicule::getPenalite() const
 {
     return penalite;
@@ -176,7 +187,7 @@ const array<int, 360> & Vehicule::getDistance() const
 
 void Vehicule::move()
 {
-    if (isRunning)
+    if (isRunning and isEnable)
     //if (orientation<180) orientation++; else orientation=-180;
     {
         double distance=(vitesse_mm_s*periode_ms)/1000.0;
@@ -215,7 +226,6 @@ void Vehicule::move()
     QPointF p;
     if (circuit.startLine.intersects(circuit.linesVehicules[indiceMyLines+1],&p)==QLineF::BoundedIntersection)
     {
-        qDebug()<<"tour";
         if (isOnStartLine==false)
         {
             std::chrono::time_point<std::chrono::high_resolution_clock> currentTime=high_resolution_clock::now();

@@ -34,6 +34,8 @@ public:
 
     bool getPenalite() const;
 
+    void setIsEnable(bool newIsEnable);
+
 public slots:
     void setIsCollisions(bool newIsCollisions);
     void start();
@@ -50,6 +52,7 @@ private:
     bool isCollisions=true;
     bool isOnStartLine=false;
     bool waitFirstTour=true;
+    bool isEnable=true;
     int nbTour=0;
 
     bool isRunning=false;
