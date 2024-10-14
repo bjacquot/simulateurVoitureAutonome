@@ -10,10 +10,11 @@ class CommunicationTCP : public QObject
 {
     Q_OBJECT
 public:
-    explicit CommunicationTCP(int port,QObject *parent = nullptr);
+    explicit CommunicationTCP(int _port,QObject *parent = nullptr);
     void setServoDirection(double *_servoDirection);
 
 private :
+    int port;
     QTcpServer monServeur;
     QTcpSocket *serveurSocket=nullptr;
     QDataStream dataIn;
@@ -24,6 +25,7 @@ private :
     std::chrono::time_point<std::chrono::high_resolution_clock> t1,t2;
 public slots:
     void sendDatas(const QString &data);
+    void reStartConnexion();
 
 private slots:
     void newConnection();

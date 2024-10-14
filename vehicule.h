@@ -35,6 +35,7 @@ public:
     bool getPenalite() const;
 
     void setIsEnable(bool newIsEnable);
+    CommunicationTCP tcp;
 
 public slots:
     void setIsCollisions(bool newIsCollisions);
@@ -42,7 +43,6 @@ public slots:
     void stop();
 
 private:
-    CommunicationTCP tcp;
     int maxDistanceLidar=12000;
     QPointF position;
     QPointF positionInit;

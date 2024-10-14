@@ -54,6 +54,18 @@ MainWindow::MainWindow(int nbVoitures, QWidget *parent)
 
     ui->checkBox_all->setChecked(true);
 
+    connect(ui->initTcp,&QPushButton::clicked,
+            &circuit.voiture1.voiture->tcp,&CommunicationTCP::reStartConnexion);
+    connect(ui->initTcp,&QPushButton::clicked,
+            &circuit.voiture2.voiture->tcp,&CommunicationTCP::reStartConnexion);
+    connect(ui->initTcp,&QPushButton::clicked,
+            &circuit.voiture3.voiture->tcp,&CommunicationTCP::reStartConnexion);
+    connect(ui->initTcp,&QPushButton::clicked,
+            &circuit.voiture4.voiture->tcp,&CommunicationTCP::reStartConnexion);
+    connect(ui->initTcp,&QPushButton::clicked,
+            &circuit.voiture5.voiture->tcp,&CommunicationTCP::reStartConnexion);
+    connect(ui->initTcp,&QPushButton::clicked,
+            &circuit.voiture6.voiture->tcp,&CommunicationTCP::reStartConnexion);
 
     connect(ui->enableVoiture_1,&QCheckBox::clicked,
             circuit.voiture1.voiture,&Vehicule::setIsEnable);

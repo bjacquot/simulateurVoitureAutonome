@@ -6,8 +6,9 @@ using std::chrono::duration_cast;
 using std::chrono::duration;
 using std::chrono::milliseconds;
 
-CommunicationTCP::CommunicationTCP(int port, QObject *parent)
+CommunicationTCP::CommunicationTCP(int _port, QObject *parent)
     : QObject{parent}
+    , port(_port)
 {
     isConnected=false;
     monServeur.listen(QHostAddress(QHostAddress::AnyIPv4),port);
@@ -58,6 +59,14 @@ void CommunicationTCP::sendDatas(const QString &data)
         out<<data;
         serveurSocket->write(block);
     }
+}
+
+void CommunicationTCP::reStartConnexion()
+{
+    monServeur.close();
+    serveurSocket->disconnect();
+    closeConnection();
+    monServeur.listen(QHostAddress(QHostAddress::AnyIPv4),port);
 }
 
 void CommunicationTCP::getDatas()
