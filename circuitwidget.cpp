@@ -238,8 +238,94 @@ void CircuitWidget::loadCircuit2()
 void CircuitWidget::loadCircuit3()
 {
     coteDroit.clear();
-    coteGauche.clear();
+    coteDroit.append(SegmentPiste(droit,2500));
+    coteDroit.append(SegmentPiste(virageM45,500));
+    coteDroit.append(SegmentPiste(droit,500));
+    coteDroit.append(SegmentPiste(virageP45,500));
+    coteDroit.append(SegmentPiste(droit,2500));
+    coteDroit.append(SegmentPiste(virageM45,500));
+    coteDroit.append(SegmentPiste(droit,500));
+    coteDroit.append(SegmentPiste(virageP45,500));
+    coteDroit.append(SegmentPiste(droit,1000));
+    coteDroit.append(SegmentPiste(virageP45,500));
+    coteDroit.append(SegmentPiste(droit,500));
+    coteDroit.append(SegmentPiste(virageP45,500));
+    coteDroit.append(SegmentPiste(droit,500));
+    coteDroit.append(SegmentPiste(virageP45,500));
+    coteDroit.append(SegmentPiste(droit,500));
+    coteDroit.append(SegmentPiste(virageP45,500));
+    coteDroit.append(SegmentPiste(droit,5000));
+    coteDroit.append(SegmentPiste(virageM90,500));
+    coteDroit.append(SegmentPiste(droit,4000));
+    coteDroit.append(SegmentPiste(virageM45,500));
+    coteDroit.append(SegmentPiste(droit,500));
+    coteDroit.append(SegmentPiste(virageM45,500));
+    coteDroit.append(SegmentPiste(droit,2000));
+    coteDroit.append(SegmentPiste(virageP45,500));
+    coteDroit.append(SegmentPiste(droit,100));
+    coteDroit.append(SegmentPiste(virageP45,500));
+    coteDroit.append(SegmentPiste(droit,100));
+    coteDroit.append(SegmentPiste(virageP45,500));
+    coteDroit.append(SegmentPiste(droit,100));
+    coteDroit.append(SegmentPiste(virageP45,500));
+    coteDroit.append(SegmentPiste(droit,6000));
+    coteDroit.append(SegmentPiste(virageP90,500));
+    coteDroit.append(SegmentPiste(virageP90,500));
+    coteDroit.append(SegmentPiste(droit,2500));
+    coteDroit.append(SegmentPiste(virageM90,500));
+    coteDroit.append(SegmentPiste(droit,5000));
+    coteDroit.append(SegmentPiste(virageM90,500));
+    coteDroit.append(SegmentPiste(droit,10000));
+    coteDroit.append(SegmentPiste(virageP90,200));
+    coteDroit.append(SegmentPiste(droit,80));
+    coteDroit.append(SegmentPiste(virageP90,200));
+    coteDroit.append(SegmentPiste(droit,9000));
 
+    coteGauche.clear();
+    coteGauche.append(SegmentPiste(droit,2500));
+    coteGauche.append(SegmentPiste(virageP45,500));
+    coteGauche.append(SegmentPiste(droit,500));
+    coteGauche.append(SegmentPiste(virageM45,500));
+    coteGauche.append(SegmentPiste(droit,2000));
+    coteGauche.append(SegmentPiste(virageM45,500));
+    coteGauche.append(SegmentPiste(droit,500));
+    coteGauche.append(SegmentPiste(virageP45,500));
+    coteGauche.append(SegmentPiste(droit,2000));
+    coteGauche.append(SegmentPiste(virageP45,500));
+    coteGauche.append(SegmentPiste(droit,1000));
+    coteGauche.append(SegmentPiste(virageP45,500));
+    coteGauche.append(SegmentPiste(droit,2000));
+    coteGauche.append(SegmentPiste(virageP45,500));
+    coteGauche.append(SegmentPiste(droit,1000));
+    coteGauche.append(SegmentPiste(virageP45,500));
+    coteGauche.append(SegmentPiste(droit,3000));
+    coteGauche.append(SegmentPiste(virageM90,500));
+    coteGauche.append(SegmentPiste(droit,2000));
+    coteGauche.append(SegmentPiste(virageM90,500));
+    coteGauche.append(SegmentPiste(droit,1000));
+    coteGauche.append(SegmentPiste(virageP90,500));
+    coteGauche.append(SegmentPiste(droit,2000));
+    coteGauche.append(SegmentPiste(virageP90,500));
+    coteGauche.append(SegmentPiste(droit,10000));
+    coteGauche.append(SegmentPiste(virageP90,500));
+    coteGauche.append(SegmentPiste(droit,3000));
+    coteGauche.append(SegmentPiste(virageP90,500));
+    coteGauche.append(SegmentPiste(droit,1000));
+    coteGauche.append(SegmentPiste(virageP45,500));
+    coteGauche.append(SegmentPiste(droit,2000));
+    coteGauche.append(SegmentPiste(virageM45,500));
+    coteGauche.append(SegmentPiste(virageM90,500));
+    coteGauche.append(SegmentPiste(droit,2000));
+    coteGauche.append(SegmentPiste(virageM90,500));
+    coteGauche.append(SegmentPiste(droit,10000));
+    coteGauche.append(SegmentPiste(virageP90,500));
+    coteGauche.append(SegmentPiste(droit,4100));
+    coteGauche.append(SegmentPiste(virageP90,500));
+    coteGauche.append(SegmentPiste(droit,11000));
+
+    yposCoteDroit=-1250;
+    yposCoteGauche=-3750;
+    startLine=QLine(500,yposCoteDroit,500,yposCoteGauche);
     createCircuit();
 }
 
@@ -337,6 +423,34 @@ void CircuitWidget::updateLines(const QList<SegmentPiste> &cote, QVector<QLineF>
             double deltaAngle=10;
             double deltaAngleRad=qDegreesToRadians((double)deltaAngle);
             for(int i=-1;i>=-90;i-=deltaAngle)
+            {
+                angle-=deltaAngle;
+                double angleRad=qDegreesToRadians((double)angle);
+                endPoint=startPoint+QPointF(sgt.longueur*deltaAngleRad*qCos(angleRad),
+                                                sgt.longueur*deltaAngleRad*qSin(angleRad));
+                lines.append(QLineF(startPoint,endPoint));
+                startPoint=endPoint;
+            }
+        }
+        else if (sgt.type==virageP45)
+        {
+            double deltaAngle=15;
+            double deltaAngleRad=qDegreesToRadians((double)deltaAngle);
+            for(int i=1;i<=45;i+=deltaAngle)
+            {
+                angle+=deltaAngle;
+                double angleRad=qDegreesToRadians((double)angle);
+                endPoint=startPoint+QPointF(sgt.longueur*deltaAngleRad*qCos(angleRad),
+                                                sgt.longueur*deltaAngleRad*qSin(angleRad));
+                lines.append(QLineF(startPoint,endPoint));
+                startPoint=endPoint;
+            }
+        }
+        else if (sgt.type==virageM45)
+        {
+            double deltaAngle=15;
+            double deltaAngleRad=qDegreesToRadians((double)deltaAngle);
+            for(int i=-1;i>=-45;i-=deltaAngle)
             {
                 angle-=deltaAngle;
                 double angleRad=qDegreesToRadians((double)angle);
