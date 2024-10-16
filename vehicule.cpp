@@ -83,7 +83,8 @@ void Vehicule::updateLidar()
                 and (i!=indiceMyLines+1)
                 and (i!=indiceMyLines+3))
             {
-                if ((isCollisions)or(i==indiceMyLines+2))
+                if (((i!=indiceMyLines+2)and(isCollisions==true)) or
+                    (angle!=-180))
                     if (line.intersects(intersectionLine,&p)==QLineF::BoundedIntersection)
                     {
                         line.setP2(p);
@@ -222,7 +223,7 @@ void Vehicule::move()
 
     circuit.linesVehicules[indiceMyLines+3].setP1(arGauche);
     circuit.linesVehicules[indiceMyLines+3].setP2(avGauche);
-
+    // passage de la ligne d'arrivée
     QPointF p;
     if (circuit.startLine.intersects(circuit.linesVehicules[indiceMyLines+1],&p)==QLineF::BoundedIntersection)
     {
