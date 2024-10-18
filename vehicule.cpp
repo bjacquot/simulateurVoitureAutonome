@@ -84,7 +84,7 @@ void Vehicule::updateLidar()
                 and (i!=indiceMyLines+3))
             {
                 if (((i!=indiceMyLines+2)and(isCollisions==true)) or
-                    (angle!=-180))
+                    ((i==indiceMyLines+2)and(angle!=-180)))
                     if (line.intersects(intersectionLine,&p)==QLineF::BoundedIntersection)
                     {
                         line.setP2(p);
